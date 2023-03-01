@@ -18,7 +18,6 @@ class LRUCache:
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.d = OrderedDict()
-        self.size = 0
 
     def get(self, key: int) -> int:
         if key in self.d:
