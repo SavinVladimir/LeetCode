@@ -8,7 +8,6 @@
 // typically using all the original letters exactly once.
 
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -19,19 +18,17 @@ public:
             return false;
         }
 
-        vector<int> count(26, 0);
+        int count[256] = {0};
 
         for (int i = 0; i < s.size(); i++) {
-            count[s[i] - 'a']++;
-            count[t[i] - 'a']--;
+            count[s[i]]++;
+            count[t[i]]--;
         }
 
-        for (int el: count) {
+        for (int el: count)
             if (el != 0) {
                 return false;
             }
-        }
-
 
         return true;
 
